@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Webcam from "react-webcam";
 import * as faceapi from "face-api.js";
-import { browserHistory } from "react-router";
+// import { browserHistory } from "react-router";
+
 import axios from "axios";
 // const MODEL_URL = "/models";
 
@@ -38,11 +39,11 @@ class WebCamPicure extends Component {
 	// 	// faceapi.loadFaceDetectionModel(MODEL_URL);
 	// 	faceapi.loadSsdMobilenetv1Model(MODEL_URL);
 	// }
-	OnSecond = () => {
-		var AppUrl = "/#Second";
-		browserHistory.push(AppUrl);
-		window.location.reload();
-	};
+	// OnSecond = () => {
+	// 	var AppUrl = "/#Second";
+	// 	browserHistory.push(AppUrl);
+	// 	window.location.reload();
+	// };
 
 	capture = () => {
 		const imageSrc = this.webcam.current.getScreenshot();
@@ -191,12 +192,16 @@ class WebCamPicure extends Component {
 		return (
 			<div
 				className="App"
-				style={{
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-				}}
+			
 			>
+				<div 
+					style={{
+						margin:"50px",
+						display: "flex",
+						flexDirection: "row",
+						justifyContent:"center",
+						alignItems: "center",
+					}}>
 				<Webcam
 					audio={false}
 					height={350}
@@ -217,14 +222,22 @@ class WebCamPicure extends Component {
 					width={350}
 					height={350}
 				/>
-				<br />
-				<a id="download">
+				</div>
+				<div style={{
+						display: "flex",
+						flexDirection: "row",
+						alignItems: "center",
+						justifyContent:"center",
+						margin:"100px",
+						
+					}}>
+									<a id="download">
 					<button type="button" onClick={this.download}>
-						Download
+						Capture
 					</button>
 				</a>
 				<button onClick={this.OnSecond}>Recognization</button>
-				<div class="upload">
+				{/* <div class="upload">
 					<form onSubmit={this.fileUploadHandler} encType="multipart">
 						<input
 							type="file"
@@ -234,6 +247,7 @@ class WebCamPicure extends Component {
 						/>
 						<button type="submit">upload</button>
 					</form>
+					</div> */}
 				</div>
 			</div>
 		);

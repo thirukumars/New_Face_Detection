@@ -2,8 +2,8 @@ const express = require("express");
 const bodyParser = require('body-parser')
 const axios = require("axios");
 const path = require("path");
-var Blob = require("blob");
-var FileReader = require("fs");
+// var Blob = require("blob");
+// var FileReader = require("fs");
 const connection = require('../server/database');
 const nameArrayRouter = require('./Router/nameArray')
 const uploadImage = require('./Router/uploadRouter')
@@ -28,11 +28,6 @@ var image_name = "";
 app.use(express.static(__dirname + "../FinalProject-master/public"));
 // app.use(express.static(__dirname + "../FinalProject-master/public"));
 
-function name(val) {
-	console.log("val" + val);
-	image_name = val;
-}
-
 app.use('/upload',uploadImage)
 
 app.get("/datas", (req, res) => {
@@ -55,8 +50,6 @@ app.use('/image',ImageController)
 
 
 app.use('/nameArray',nameArrayRouter)
-// app.use('/nameArray',GetNameArray)
-// app.use(express.urlencoded());
 
 // Access the parse results as request.body
 
@@ -87,35 +80,8 @@ app.get("/date", function (req, res) {
 	);
 });
 
-// app.post('/download',(req,res)=>{
-	
-// 	let image = req.body.tempImage.replace(/^data:image\/png;base64,/, "");
-// 	let nameOfImage = req.body.name;
-// 	// console.log(nameOfImage)
-// 	FileReader.writeFile(`../FinalProject-master/public/img/${nameOfImage}.png`,image,'base64',function(err){
-// 		if(err){
-// 			console.log(err);
-// 		}
-// 	})
+
 app.use('/download',DownloadRouter)
-	// ../../FinalProject-master/public/img/local.png
-	// console.log(image)
-	// var buf = new Buffer.from(image, 'base64');
-	// writeFileToSystem(buf)
-	// console.log(image)
-
-	// var data =  image.replace(/^data:image\/\w+;base64,/, "");
-	// var buf = new Buffer(data, 'base64');
-	// fs.writeFile('image.png', buf);
-	// console.log(buf)
-
-// 	function writeFileToSystem(buf){
-		
-// 		FileReader.writeFile("images/imag.png",buf,function(err){
-// 			console.log('file saved')
-// 		})
-// 	}
-// })
 
 const port = 5000;
 app.listen(port, () => {

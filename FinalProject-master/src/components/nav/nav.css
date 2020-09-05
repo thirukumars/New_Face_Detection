@@ -1,0 +1,30 @@
+.nav-class{
+    display: flex;  
+    background-color: rgba(171, 176, 182, 0.411);
+    color:white;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    width:100%
+
+}
+
+.nav-class .nav-link{
+    display: flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+  .nav-class ul li{
+      list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    
+  }
+/* nav ul li{
+    list-style: none;
+    width:60%;
+    display:inline-flex;
+    justify-content: space-around;
+    align-items: center;
+} */
