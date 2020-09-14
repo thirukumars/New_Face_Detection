@@ -347,14 +347,14 @@ class Camera extends Component {
 		}
 
 		return (
-			<div className="main-content">
-				<div className="sub">
+			<div className="main-content-camera">
+				<div className="sub" >
 					<video
 						id="videoTag"
-						style={{ position: "absolute", top: 0 }}
+						style={{ position: "absolute", left:"300px",top:"50px",boxSizing:"content-box"}}
 						ref={this.videoTag}
-						width={500}
-						height={500}
+						width={550}
+						height={550}
 						autoPlay
 					></video>
 				</div>
@@ -362,14 +362,14 @@ class Camera extends Component {
 				<div>
 					<canvas
 						id="myCanvas"
-						style={{ position: "absolute", top: 0 }}
-						height={500}
-						width={500}
+						style={{ position: "absolute", left:"300px",top: "50px",boxSizing:"content-box"}}
+						height={550}
+						width={550}
 					></canvas>
 				</div>
 
 				{/* ------ START and STOP button code ---- */}
-				<div style={{ position: "absolute", top: "80%", left: "10%" }}>
+				<div style={{ position: "absolute", top: "83%", left: "40%" }}>
 					<button
 						ref="startBtn"
 						className="btn btn-success"
@@ -395,13 +395,13 @@ class Camera extends Component {
 					>
 						Stop
 					</button>
-					<button onClick={this.OnFirst}>CaptureImage</button>
+					{/* <button onClick={this.OnFirst}>CaptureImage</button> */}
 
 					{/* this is the place where the l's element render */}
-					<button onClick={this.Result}>Result</button>
+					{/* <button onClick={this.Result}>Result</button> */}
 					<br />
 
-					{l}
+					{/* {l} */}
 					{/* {imgTagback} */}
 				</div>
 			</div>

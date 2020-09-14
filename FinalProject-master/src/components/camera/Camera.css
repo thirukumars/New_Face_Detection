@@ -1,8 +1,25 @@
-.main-content {
+.main-content-camera {
 	margin: 0 auto;
-	background-color: #0cf7e3;
+	background-color: goldenrod;
+	overflow: hidden;
 }
 .sub {
+	margin: 0 auto;
 	height: 100vh;
 	width: 0 auto;
+	background-color: rgb(12, 12, 12);
+	overflow: hidden;
 }
+/* #videoTag{
+	position: absolute;
+	border:20px solid yellow;
+	box-sizing:inherit;
+	left:300px;
+	padding: 0px;
+	margin: 0px;
+	outline: none;
+	border:none
+}
+#myCanvas{
+	position: absolute;
+} */

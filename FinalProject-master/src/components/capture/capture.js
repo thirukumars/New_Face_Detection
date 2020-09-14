@@ -75,6 +75,7 @@ class WebCamPicure extends Component {
 
 	};
 	download() {
+		
 		name = prompt("Enter the name:");
 		// console.log("download");
 		// var download = document.getElementById("download");
@@ -86,6 +87,7 @@ class WebCamPicure extends Component {
 		// download.setAttribute("href", image);
 		// // filename.setAttribute("download","file"+"praveen"+".png");
 		// // console.log(filename)
+		if(name!=null){
 		var str = "";
 		for (let i of name) {
 			if (i != ".") {
@@ -116,6 +118,7 @@ class WebCamPicure extends Component {
 		}
 		axios.post('/download',data).then(()=>
 			console.log('success')).catch((error)=>console.log(error))
+	}
 		
 	}
 
@@ -236,7 +239,7 @@ class WebCamPicure extends Component {
 						Capture
 					</button>
 				</a>
-				<button onClick={this.OnSecond}>Recognization</button>
+				{/* <button onClick={this.OnSecond}>Recognization</button> */}
 				{/* <div class="upload">
 					<form onSubmit={this.fileUploadHandler} encType="multipart">
 						<input

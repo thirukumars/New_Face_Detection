@@ -12,6 +12,7 @@ const individualExpression = require('./Router/individualExpression')
 const DownloadRouter = require('./Router/DownloadRouter')
 const overallExpression = require('./Router/overallExpression')
 const ImageController  = require('./Router/ImageRouter')
+const DetailsRouter = require('./Router/DetailsRouter')
 const GetNameArray = require('./Router/nameArray')
 const app = express();
 const router = express.Router();
@@ -57,11 +58,7 @@ app.use('/finalExpression',FinalExpression)
 app.use('/individualExpression',individualExpression)
 app.use('/overallExpression',overallExpression)
 
-app.post("/detail", function (req, res) {
-	staffName = req.body;
-	console.log(staffName);
-});
-
+app.use('/detail',DetailsRouter)
 app.get("/date", function (req, res) {
 	let date1 = "09 - 03 - 2020";
 	let date2 = "16 - 05 - 2020";

@@ -6,8 +6,11 @@ function Nav(){
         <nav className="nav-class">
             
             <ul className="nav-link">
-                <Link to="/capture"><li>Capture</li></Link>
-                <Link to="/Detect"><li>Detect</li></Link>
+                <Link to="/" style={{"TextDecoration":"none" ,}}><li className="items">Home</li></Link>
+                <Link to="/capture" style={{"TextDecoration":"none"}}><li className="items">Capture</li></Link>
+                <Link to="/Detect" style={{"TextDecoration":"none"}}><li className="items">Detect</li></Link>
+                
+
             </ul>
         </nav>
     )

@@ -4,6 +4,7 @@ import Detail from './components/Detail/Detail'
 import Nav from './components/nav/nav'
 import Capture from './components/capture/capture'
 import Detect from './components/camera/Camera'
+import './App.css'
 
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 
@@ -39,6 +40,7 @@ class App extends Component {
 				<Route exact path='/'  component={Detail}/>
 				<Route path='/capture' component={Capture}/>
 				<Route path='/Detect' component={Detect}/>
+				
 				
 				
 				</Switch>
