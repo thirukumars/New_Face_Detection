@@ -5,6 +5,7 @@ const connection = mysql.createConnection({
 	user: "root",
 	password: "",
 	database: "expression_detection",
+	timezone:"utc"
 });
 
 connection.connect((err) => {

@@ -7,11 +7,11 @@ class MappingResult extends Component {
 		this.getRowsData = this.getRowsData.bind(this);
 		this.getKeys = this.getKeys.bind(this);
 	}
-	componentDidMount() {
-		console.log(this.props.data);
-		console.log(this.props.data[0]);
-		console.log(this.props.overall);
-	}
+	// componentDidMount() {
+	// 	console.log(this.props.data);
+	// 	console.log(this.props.data[0]);
+	// 	console.log(this.props.overall);
+	// }
 	getKeys = function () {
 		return Object.keys(this.props.data[0]);
 	};
@@ -25,7 +25,7 @@ class MappingResult extends Component {
 
 	getRowsData = function () {
 		var items = this.props.data;
-		console.log(items);
+		// console.log(items);
 		var keys = this.getKeys();
 
 		return items.map((row, index) => {
@@ -52,7 +52,7 @@ class MappingResult extends Component {
 }
 const RenderRow = (props) => {
 	return props.keys.map((key, index) => {
-		console.log(props.data[key] + "kakak" + props.data[key]);
+		// console.log(props.data[key] + "kakak" + props.data[key]);
 		return <td key={props.data[key]}>{props.data[key]}</td>;
 	});
 };

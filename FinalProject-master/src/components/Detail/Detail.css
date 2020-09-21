@@ -1,13 +1,14 @@
 .subContent {
 	margin: 0 auto;
-	padding: 100px;
+	padding: 85px;
 	color:white
 	/* padding: 100px auto; */
 }
 .main {
 	text-align: center;
 	height: 100vh;
+	box-sizing:border-box;
 	width: auto;
-	background-color: #1a1b18;
+	background-color: #131212;
 	color: beige;
 }

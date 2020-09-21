@@ -64,9 +64,7 @@ class Camera extends Component {
 		window.location.reload();
 	};
 	Result = () => {
-		var AppUrl = "/#Result";
-		browserHistory.push(AppUrl);
-		window.location.reload();
+		this.props.history.push('/Result');
 	};
 	componentDidMount() {
 		// fetch("/nameArray")
@@ -164,7 +162,7 @@ class Camera extends Component {
 				}
 			}
 
-			const maxDescriptorDistance = 0.7;
+			const maxDescriptorDistance = 0.8;
 			no_of_times++;
 			const faceMatcher = new faceapi.FaceMatcher(
 				labeledFaceDescriptors,
@@ -194,7 +192,7 @@ class Camera extends Component {
 				const drawBox = new faceapi.draw.DrawBox(box, { label: text });
 
 				drawBox.draw(canvas);
-				faceapi.draw.drawFaceExpressions(canvas, fullFaceDescriptions, 0.85);
+				faceapi.draw.drawFaceExpressions(canvas, fullFaceDescriptions, 0.90);
 			});
 
 			for (let i = 0; i < fullFaceDescriptions.length; i++) {
@@ -213,6 +211,7 @@ class Camera extends Component {
 
 	//This function is for the Mapping of names and expression
 	test = (Name, Expression) => {
+		if(Name != "unknown"){
 		if (map.has(Name)) {
 			// console.log(Name);
 			var append = map.get(Name);
@@ -221,6 +220,7 @@ class Camera extends Component {
 			map.set(Name, Expression);
 			// console.log(Name);
 		}
+	}
 	};
 
 	//Stop the the detection
@@ -233,7 +233,9 @@ class Camera extends Component {
 		this.setState({ enabled: true });
 		// this.setState({ enabled: false });
 		this.setState({ color: "green" });
+		
 	}
+	
 
 	//Starts the detection here
 	start() {
@@ -332,17 +334,18 @@ class Camera extends Component {
 					}
 				}
 			}
+			console.log("The Average Expression  + + +  +" +Average_expression)
 			this.formsubmit();
 			//This will assign the key and value to the {MappingComponent.js}
 
-			l = key.map((e, i) => (
-				<MappingComponent
-					key={Math.random()}
-					person={e}
-					value={FinalExpression[i]}
-					avg={Average_expression}
-				/>
-			));
+			// l = key.map((e, i) => (
+			// 	<MappingComponent
+			// 		key={Math.random()}								this is for test
+			// 		person={e}
+			// 		value={FinalExpression[i]}
+			// 		avg={Average_expression}
+			// 	/>
+			// ));
 			stop = false;
 		}
 
@@ -398,7 +401,7 @@ class Camera extends Component {
 					{/* <button onClick={this.OnFirst}>CaptureImage</button> */}
 
 					{/* this is the place where the l's element render */}
-					{/* <button onClick={this.Result}>Result</button> */}
+					<button onClick={this.Result}>Result</button>
 					<br />
 
 					{/* {l} */}

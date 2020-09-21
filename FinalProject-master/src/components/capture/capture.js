@@ -194,12 +194,12 @@ class WebCamPicure extends Component {
 	render() {
 		return (
 			<div
-				className="App"
+				className="App" style={{backgroundColor:"rgb(0, 204, 255)",height:"100vh" }}
 			
 			>
 				<div 
 					style={{
-						margin:"50px",
+						margin:"0px",
 						display: "flex",
 						flexDirection: "row",
 						justifyContent:"center",

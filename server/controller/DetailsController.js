@@ -13,3 +13,19 @@ module.exports.DetailsController=(req,res) =>{
                 }
             });
 };
+module.exports.getDetailsController=(req,res) =>{
+    detail_data = req.body;
+    console.log(detail_data)
+    // var query =
+    //             "INSERT INTO details (`staff_name`, `subject`, `department`,`batch`) VALUES (?)";
+                connection.query("SELECT * FROM details", (error, row, fields) => {
+                    if (!!error) {
+                        console.log("Error in the query");
+                    } else {
+                        console.log("seccessful query from detail");
+                        console.log(row.length);
+                        res.send(row);
+                       
+                    }
+                });
+};

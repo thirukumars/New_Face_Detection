@@ -3,3 +3,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+.ui-widget-content{
+	width:160px;
+	height:auto;
+	border:1px solid blue;
+}

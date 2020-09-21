@@ -5,7 +5,7 @@ module.exports.overallExpressionController = (request, response)=> {
 		if (!!error) {
 			console.log("Error in the query");
 		} else {
-			console.log("seccessful query");
+			console.log("seccessful query overall");
 			console.log(row.length);
 			console.log(row[row.length - 1]);
 			response.send(row[row.length - 1]);
